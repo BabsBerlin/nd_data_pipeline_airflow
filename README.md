@@ -24,13 +24,16 @@ For the Sparkify database we have the 'songplays' table as the fact table and th
 
 ### The Project Files
 
-- `dags/etl_dag.py` provides all methods to create the dag and connect to airflow
-
-- `plugins/helpers/create_tables.sql` sql queries to create the database tables 
-- `plugins/helpers/sql_queries.py` sql queries to populate the db tables 
-- `plugins/operators/stage_redshift.py` custom operator to load data from S3 to the redshift database
-- `plugins/operators/load_dimension.py` custom operator to load data from the staging table into the dimension tables
-- `plugins/operators/load_fact.py` custom operator to load data from the staging table into the fact table
+- `dags/`
+    - `etl_dag.py` provides all methods to create the dag and connect to airflow
+- `plugins/operators/`
+    - `stage_redshift.py` custom operator to load data from S3 to the redshift database
+    - `load_dimension.py` custom operator to load data from the staging table into the dimension tables
+    - `load_fact.py` custom operator to load data from the staging table into the fact table
+    - `data_quality.py` custom operator to run data quality checks
+- `plugins/helpers/`
+    - `create_tables.sql` sql queries to create the database tables 
+    - `sql_queries.py` sql queries to populate the db tables 
 
 ### The Project was created in the Udacity workspace, here are the steps you need to follow
 
