@@ -15,7 +15,6 @@ to start the airflow server please run "/opt/airflow/start.sh" in the terminal
 default_args = {
     'owner': 'udacity',
     'start_date': datetime(2019, 1, 12),
-    #'start_date': datetime(2022, 1, 1),
     'depends_on_past':False,
     'retries':3,
     'retry_delay':timedelta(minutes=5),
